@@ -1,8 +1,8 @@
 type,id,permission
 team,maintainers,triage
 team,release,push
-user,mmahadevan108,maintain
 user,ZhaoxiangJin,maintain
+user,mmahadevan108,maintain
 user,manuargue,push
 user,PetervdPerk-NXP,push
 user,bperseghetti,push
