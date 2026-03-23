@@ -69,6 +69,8 @@ skipped_modules=(
   # synchronisation is done
   edtt
   nrf_hw_models
+  # mbedtls-3.6 module is the mbedtls repository with different ref.
+  mbedtls-3.6
   )
 
 # Get the maintainer data for modules (aka. west projects)
