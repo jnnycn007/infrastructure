@@ -1,0 +1,6 @@
+type,id,permission
+team,maintainers,triage
+team,release,push
+user,ceolin,maintain
+user,valeriosetti,maintain
+user,tomi-font,maintain
