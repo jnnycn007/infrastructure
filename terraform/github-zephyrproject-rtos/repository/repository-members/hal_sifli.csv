@@ -2,4 +2,6 @@ type,id,permission
 team,maintainers,triage
 team,release,push
 user,gmarull,maintain
+user,HalfSweet,maintain
 user,cameled,push
+user,ck-telecom,push
