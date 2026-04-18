@@ -279,11 +279,17 @@ the default gateway and the secure private network traffic is not routable on it
 
     # Install cert-manager for issuing Rancher web UI TLS certificates in the K3s "under-cloud".
     kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.17.1/cert-manager.crds.yaml
-    helm install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace
+    helm install cert-manager \
+        jetstack/cert-manager \
+        --version v1.17.1 \
+        --namespace cert-manager \
+        --create-namespace
 
     # Install Rancher in the K3s "under-cloud".
     kubectl create namespace cattle-system
-    helm install rancher rancher-latest/rancher \
+    helm install rancher \
+        rancher-latest/rancher \
+        --version v2.10.2 \
         --namespace cattle-system \
         --set hostname=deploy1.cluster-a.hzr.zephyrproject.io \
         --set replicas=1 \
