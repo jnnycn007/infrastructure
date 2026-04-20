@@ -1,11 +1,11 @@
-# hzr-zephyr-ci
+# cnx-kube1
 
 ## Overview
 
 This directory contains the Terraform manifests that define the resources for
-the production CI Kubernetes cluster hosted by Hetzner.
+the production CI Kubernetes cluster hosted by Centrinix.
 
-The resources defined here are deployed to the `ci-main` cluster of the Hetzner
+The resources defined here are deployed to the `kube1` cluster of the Centrinix
 Rancher Server.
 
 ## Deployment
@@ -13,8 +13,7 @@ Rancher Server.
 ### Overview
 
 Deployment process must be executed locally using the Terraform cloud state
-backend, which is managed in the `hzr-zephyr-ci` workspace in the Terraform
-cloud.
+backend, which is managed in the `cnx-kube1` workspace in the Terraform cloud.
 
 All secrets used during the deployment process are stored in the
 `terraform-zephyr-secrets` secret in the AWS Secrets Manager.
@@ -23,7 +22,7 @@ All secrets used during the deployment process are stored in the
 
 The deployment host must have Terraform and kubectl installed.
 
-In addition, the deployment host must have access to the Zephyr Hetzner internal
+In addition, the deployment host must have access to the Zephyr Centrinix internal
 networks, which requires a special VPN connection, for connecting to the Rancher
 Kubernetes cluster endpoints.
 
@@ -49,18 +48,16 @@ terraform apply
 
 ### Runner Scale Set Management
 
-To create and activate all runner scale sets in the hzr-zephyr-ci deployment:
+To create and activate all runner scale sets in the cnx-kube1 deployment:
 
 ```
 terraform apply \
-    -target=helm_release.zephyr_runner_v2_linux_x64_4xlarge_hzr \
-    -target=helm_release.zephyr_runner_v2_linux_arm64_4xlarge_hzr
+    -target=helm_release.zephyr_runner_v2_linux_arm64_4xlarge_cnx
 ```
 
-To destroy and deactivate all runner scale sets in the hzr-zephyr-ci deployment:
+To destroy and deactivate all runner scale sets in the cnx-kube1 deployment:
 
 ```
 terraform destroy \
-    -target=helm_release.zephyr_runner_v2_linux_x64_4xlarge_hzr \
-    -target=helm_release.zephyr_runner_v2_linux_arm64_4xlarge_hzr
+    -target=helm_release.zephyr_runner_v2_linux_arm64_4xlarge_cnx
 ```

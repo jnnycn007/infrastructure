@@ -19,7 +19,7 @@ Deployment process must be executed remotely from the `aws-zephyr-alpha`
 workspace in the Terraform cloud.
 
 All secrets used during the deployment process are stored in the
-`zephyr-secrets` application in the HCP Vault Secrets.
+`terraform-zephyr-secrets` secret in the AWS Secrets Manager.
 
 ### Host Requirements
 
