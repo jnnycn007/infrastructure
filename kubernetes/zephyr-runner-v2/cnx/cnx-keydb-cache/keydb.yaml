@@ -9,16 +9,16 @@ metadata:
 spec:
   containers:
   - name: keydb
-    image: ghcr.io/centrinix/keydb:v6.3.4.cnx
+    image: eqalpha/keydb:x86_64_v6.3.4
     ports:
     - containerPort: 6379
     resources:
       limits:
         cpu: "16.0"
-        memory: "256Gi"
+        memory: "128Gi"
       requests:
         cpu: "15.0"
-        memory: "224Gi"
+        memory: "112Gi"
     volumeMounts:
     - mountPath: /data
       name: data
@@ -35,7 +35,8 @@ spec:
       - key: keydb-config
         path: keydb.conf
   nodeSelector:
-    magnum.openstack.org/role: cache
+    kubernetes.zephyrproject.io/role: cache
+    kubernetes.io/hostname: k1chc1
 
 ---
 # keydb-cache-2 Pod
@@ -49,16 +50,16 @@ metadata:
 spec:
   containers:
   - name: keydb
-    image: ghcr.io/centrinix/keydb:v6.3.4.cnx
+    image: eqalpha/keydb:x86_64_v6.3.4
     ports:
     - containerPort: 6379
     resources:
       limits:
         cpu: "16.0"
-        memory: "256Gi"
+        memory: "128Gi"
       requests:
         cpu: "15.0"
-        memory: "224Gi"
+        memory: "112Gi"
     volumeMounts:
     - mountPath: /data
       name: data
@@ -75,7 +76,8 @@ spec:
       - key: keydb-config
         path: keydb.conf
   nodeSelector:
-    magnum.openstack.org/role: cache
+    kubernetes.zephyrproject.io/role: cache
+    kubernetes.io/hostname: k1chc2
 
 ---
 # keydb-cache-3 Pod
@@ -89,16 +91,16 @@ metadata:
 spec:
   containers:
   - name: keydb
-    image: ghcr.io/centrinix/keydb:v6.3.4.cnx
+    image: eqalpha/keydb:x86_64_v6.3.4
     ports:
     - containerPort: 6379
     resources:
       limits:
         cpu: "16.0"
-        memory: "256Gi"
+        memory: "128Gi"
       requests:
         cpu: "15.0"
-        memory: "224Gi"
+        memory: "112Gi"
     volumeMounts:
     - mountPath: /data
       name: data
@@ -115,4 +117,5 @@ spec:
       - key: keydb-config
         path: keydb.conf
   nodeSelector:
-    magnum.openstack.org/role: cache
+    kubernetes.zephyrproject.io/role: cache
+    kubernetes.io/hostname: k1chc3

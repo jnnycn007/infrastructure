@@ -5,11 +5,11 @@ metadata:
   namespace: keydb-cache
 data:
   keydb-config: |
-    # Set server thread count to 4.
-    server-threads 4
+    # Set server thread count to 16.
+    server-threads 16
 
-    # Set maximum memory to 224 GiB.
-    maxmemory 224gb
+    # Set maximum memory to 112 GiB.
+    maxmemory 112gb
 
     # Evict cache based on Least Recently Used (LRU).
     maxmemory-policy allkeys-lru

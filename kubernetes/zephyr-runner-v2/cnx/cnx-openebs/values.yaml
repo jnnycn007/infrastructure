@@ -1,14 +1,1 @@
-# Set OpenEBS base paths to under containerd mount, which is accessible by the
-# node kubelet.
-varDirectoryPath:
-  baseDir: "/var/lib/containerd/openebs"
-
-localprovisioner:
-  basePath: "/var/lib/containerd/openebs/local"
-
-ndm:
-  sparse:
-    path: "/var/lib/containerd/openebs/sparse"
-
-jiva:
-  defaultStoragePath: "/var/lib/containerd/openebs"
+# No default configuration overrides for Centrinix OpenEBS deployment for now.
