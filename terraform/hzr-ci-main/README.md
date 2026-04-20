@@ -17,11 +17,11 @@ backend, which is managed in the `hzr-zephyr-ci` workspace in the Terraform
 cloud.
 
 All secrets used during the deployment process are stored in the
-`zephyr-secrets` application in the HCP Vault Secrets.
+`terraform-zephyr-secrets` secret in the AWS Secrets Manager.
 
 ### Host Requirements
 
-The deployment host must have Terraform, Vault (`vlt`) and kubectl installed.
+The deployment host must have Terraform and kubectl installed.
 
 In addition, the deployment host must have access to the Zephyr Hetzner internal
 networks, which requires a special VPN connection, for connecting to the Rancher
