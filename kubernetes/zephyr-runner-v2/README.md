@@ -20,9 +20,7 @@ Terraform manifest.
 
 * cnx: Configurations for Centrinix cloud zephyr-runner-v2 deployments
 
-    * cnx-privileged: Centrinix Magnum Kubernetes cluster permissive pod security policy
     * cnx-openebs: Centrinix OpenEBS configurations
-    * cnx-openebs-rawfile-localpv: Centrinix OpenEBS LocalPV configurations
     * cnx-keydb-cache: Centrinix KeyDB compilation cache configurations
     * cnx-runner-scale-set-controller: Centrinix Actions Runner Controller
       configurations
@@ -45,24 +43,6 @@ Terraform manifest.
 While the Actions Runner Controller Helm chart installations are intended to be
 managed using Terraform, it is possible to manually install and manage them for
 testing purposes.
-
-### Pod Security Policy Configuration
-
-`PodSecurityPolicy` admission controller is enabled by default on both AWS
-Elastic Kubernetes Service (EKS) and Centrinix OpenStack Magnum Kubernetes
-clusters by default.
-
-In the AWS EKS Kubernetes cluster, AWS creates a default pod security policy
-that allows full unrestricted access to Pod features from all authenticated
-users.
-
-This is not done by default in the Centrinix Magnum OpenStack cluster and it is
-necessary to create a pod security policy that allows all authenticated users to
-access Pod features:
-
-```
-kubectl apply -f cnx/cnx-privileged/privileged-podsecuritypolicy.yaml
-```
 
 ### OpenEBS Deployment
 
@@ -174,4 +154,3 @@ Note that the above commands must be run for every runner scale set deployment.
 | zephyr-runner-v2-linux-arm64-4xlarge | Linux | AArch64 | 16 | 32G |
 | zephyr-runner-v2-linux-x64-xlarge | Linux | x86-64 | 4 | 8G |
 | zephyr-runner-v2-linux-x64-4xlarge | Linux | x86-64 | 16 | 32G |
-| zephyr-runner-v2-linux-multiarch-4xlarge | Linux | AArch64 + x86-64 | 16 | 32G |

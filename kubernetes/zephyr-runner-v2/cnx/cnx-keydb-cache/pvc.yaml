@@ -9,7 +9,7 @@ spec:
   accessModes: ["ReadWriteOnce"]
   resources:
     requests:
-      storage: 800Gi
+      storage: 50Gi
 
 ---
 # keydb-cache-2-data Persistent Volume Claim
@@ -23,7 +23,7 @@ spec:
   accessModes: ["ReadWriteOnce"]
   resources:
     requests:
-      storage: 800Gi
+      storage: 50Gi
 
 ---
 # keydb-cache-3-data Persistent Volume Claim
@@ -37,4 +37,4 @@ spec:
   accessModes: ["ReadWriteOnce"]
   resources:
     requests:
-      storage: 800Gi
+      storage: 50Gi
