@@ -197,7 +197,7 @@ jobs:
 
           echo "$runnerList" |
             jq -r '.items[].status | select(.phase == "Failed").runnerName' |
-            xargs kubectl delete ephemeralrunner
+            xargs kubectl -n arc-runners delete ephemeralrunner
 
           .github/log.sh INFO "cnx: kube1: Cleaned up ${failedCount} ephemeral runners with failed status."
         fi
@@ -318,7 +318,7 @@ jobs:
 
           echo "$runnerList" |
             jq -r '.items[].status | select(.phase == "Failed").runnerName' |
-            xargs kubectl delete ephemeralrunner
+            xargs kubectl -n arc-runners delete ephemeralrunner
 
           .github/log.sh INFO "hzr: ci-main: Cleaned up ${failedCount} ephemeral runners with failed status."
         fi
