@@ -12,7 +12,7 @@ jobs:
   # AWS Cloud Monitor Job
   aws-monitor:
     name: AWS Cloud Monitor
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     env:
       DISCORD_INFRA_MONITOR_WEBHOOK: "${{ secrets.DISCORD_INFRA_MONITOR_WEBHOOK }}"
@@ -90,7 +90,7 @@ jobs:
   # Centrinix Cloud Monitor Job
   cnx-monitor:
     name: Centrinix Cloud Monitor
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     env:
       DISCORD_INFRA_MONITOR_WEBHOOK: "${{ secrets.DISCORD_INFRA_MONITOR_WEBHOOK }}"
@@ -101,7 +101,7 @@ jobs:
 
     - name: Install WireGuard client
       run: |
-        sudo apt install wireguard openresolv
+        sudo apt install wireguard
 
     - name: Install Kubernetes command line tools
       run: |
@@ -211,7 +211,7 @@ jobs:
   # Hetzner Cloud Monitor Job
   hzr-monitor:
     name: Hetzner Cloud Monitor
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     env:
       DISCORD_INFRA_MONITOR_WEBHOOK: "${{ secrets.DISCORD_INFRA_MONITOR_WEBHOOK }}"
@@ -222,7 +222,7 @@ jobs:
 
     - name: Install WireGuard client
       run: |
-        sudo apt install wireguard openresolv
+        sudo apt install wireguard
 
     - name: Install Kubernetes command line tools
       run: |
